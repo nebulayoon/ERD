@@ -1,0 +1,40 @@
+# https://www.quickdatabasediagrams.com/
+
+User
+-
+id PK int
+phone string
+userName string
+nickName string
+email string
+password string
+pofileImg string
+webLink string
+introduce string
+
+Post
+-
+id PK int
+userId FK >- User.id
+userImg FK -< PostImage.id
+text string
+
+
+PostImage
+-
+id PK int
+postId FK >- Post.id
+
+Heart
+-
+id PK int
+postId FK >- Post.id
+userId Fk >- User.id
+createAt string
+updateAt string
+
+BookMark
+-
+id PK int
+userId FK >- User.id
+postId FK >- Post.id
